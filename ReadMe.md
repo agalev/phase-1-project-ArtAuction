@@ -10,3 +10,4 @@ If the bidder wants to buy-out, a pop-up will say “Congratulations, you’ve w
 
 Link to MET's API: https://metmuseum.github.io
 
+(I found a bunch of good objects in sequence between 36500-36520+)
