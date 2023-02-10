@@ -9,5 +9,3 @@ There will be a form and a submit button where users can bid their price on the 
 If the bidder wants to buy-out, a pop-up will say “Congratulations, you’ve won this piece” and the picture of the piece will pop up. 
 
 Link to MET's API: https://metmuseum.github.io
-
-(I found a bunch of good objects in sequence between 36500-36520+)
