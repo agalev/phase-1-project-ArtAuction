@@ -1,4 +1,5 @@
 import { countdown } from './countdown.js'
+import { expandedView } from './expandedView.js'
 
 export const card = (piece) => {
 	const card = document.createElement('article')
@@ -36,8 +37,10 @@ export const card = (piece) => {
 					<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
 					<span class="input-group-text">.00</span>
 					<button class="btn btn-outline-success" type="button">Bid</button>
-				</div>
-`
+							<button type="button" onClick="${(piece) => expandedView(piece)}" class="btn btn-outline-primary px-5 m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#modal">View Details</button>
+					</div>`
+
+
 	const span = document.createElement('span')
 	span.id = `span-${piece.id}`
 	span.className =
