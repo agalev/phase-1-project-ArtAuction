@@ -15,7 +15,7 @@ for (let index = 11264; index < 11276; index++) {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			const Object = {
+			const cardData = {
 				title: data.title,
 				artist: data.artistDisplayName,
 				artistBio: data.artistDisplayBio,
@@ -29,17 +29,20 @@ for (let index = 11264; index < 11276; index++) {
 				development: data.objectEndDate - data.objectBeginDate,
 				buyout: Math.floor(Math.random() * 10000000)
 			}
-			card(Object)
-			localData.push(Object)
+			card(cardData)
+			localData.push(cardData)
 		})
 }
 
-const card = (piece) => {
-	const card = document.createElement('article')
-	card.addEventListener('click', () => {
+const card = (piece) => { 
+	const cardElement = document.createElement('article') //dont declare variables with the same name as the function
+	card.addEventListener('click', (event) => {
+		event.preventDefault()
 		expandedView(piece)
 	})
-	card.innerHTML = `
+
+	//describes what the card element should look like:
+	cardElement.innerHTML = ` 
 		<div class="card h-100 w-75 mt-2">
   		<img src="${piece.image}" class="card-img" alt="${piece.title}">
 			<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
@@ -63,10 +66,10 @@ const card = (piece) => {
   		</div>
 		</div>
 `
-	container.append(card)
+	container.append(cardElement) //adds it to the screen 
 }
 
 const expandedView = (piece) => {
-	console.log(piece)
+	
 	// 	container.innerHTML = ''
 }
