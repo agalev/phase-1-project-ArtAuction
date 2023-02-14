@@ -24,18 +24,26 @@ export const card = (piece) => {
 				<li class="list-group-item">Dimensions: ${piece.dimensions}</li>
 				<li class="list-group-item">Completed: ${piece.date}</li>
   		</ul>
-			<span id="${piece.id
-		}" class="text-warning d-flex justify-content-around mb-2 mt-2">Current Bid: $${piece.currentBid.toLocaleString(
-			'en-US'
-		)}</span>
-			<div class="input-group mb-3 justify-content-evenly">
+			<span id="${
+				piece.id
+			}" class="fs-5 text-warning d-flex justify-content-around my-2">Current Bid: $${piece.currentBid.toLocaleString(
+		'en-US'
+	)}</span>
+			<div class="input-group my-3">
 					<span class="input-group-text">$</span>
 					<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
 					<span class="input-group-text">.00</span>
 					<button class="btn btn-outline-success" type="button">Bid</button>
 					</div>`
-
-
+	const detailButton = document.createElement('button')
+	detailButton.className = 'btn btn-outline-primary px-5 m-3 rounded-pill'
+	detailButton.dataset.bsToggle = 'modal'
+	detailButton.dataset.bsTarget = '#modal'
+	detailButton.innerText = 'View Details'
+	detailButton.addEventListener('click', () => {
+		expandedView(piece)
+	})
+	card.append(detailButton)
 	const span = document.createElement('span')
 	span.id = `span-${piece.id}`
 	span.className =
