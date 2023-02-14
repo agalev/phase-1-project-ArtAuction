@@ -1,6 +1,5 @@
 // External imports
 import { card } from './components/card.js'
-import { expandedView } from './components/expandedView.js'
 // Initialize pointers to DOM elements
 const container = document.getElementById('container')
 const form = document.getElementById('form')
