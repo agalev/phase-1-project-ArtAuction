@@ -34,8 +34,8 @@ for (let index = 11264; index < 11276; index++) {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			const Object = {
-				id: data.objectID,
+    const cardData = {
+        id: data.objectID,
 				title: data.title,
 				artist: data.artistDisplayName,
 				artistBio: data.artistDisplayBio,
@@ -53,8 +53,8 @@ for (let index = 11264; index < 11276; index++) {
 					return Math.floor(this.buyout / 2)
 				}
 			}
-			card(Object)
-			localData.push(Object)
+			card(cardData)
+			localData.push(cardData)
 		})
 }
 
@@ -86,6 +86,6 @@ form.addEventListener('submit', (e) => {
 })
 
 const expandedView = (piece) => {
-	console.log(piece)
+	
 	// 	container.innerHTML = ''
 }
