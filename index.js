@@ -58,41 +58,6 @@ for (let index = 11264; index < 11276; index++) {
 		})
 }
 
-const card = (piece) => { 
-	const cardElement = document.createElement('article') //dont declare variables with the same name as the function
-	// console.log(card)
-	cardElement.addEventListener('click', (event) => {
-		event.preventDefault()
-		expandedView(piece)
-	})
-
-	//describes what the card element should look like:
-	cardElement.innerHTML = ` 
-		<div class="card h-100 w-75 mt-2">
-  		<img src="${piece.image}" class="card-img" alt="${piece.title}">
-			<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
-				Buyout: $${piece.buyout.toLocaleString('en-US')}</span>
-  		<div class="card-body">
-    		<h5 class="card-title">${piece.title}</h5>
-    		<p class="card-text">Artist: ${piece.artistBio}</p>
-  		</div>
-  		<ul class="list-group list-group-flush">
-				<li class="list-group-item">Medium: ${piece.medium}</li>
-				<li class="list-group-item">Dimensions: ${piece.dimensions}</li>
-				<li class="list-group-item">Completed: ${piece.date}</li>
-  		</ul>
-  		<div class="card-body">
-				<div class="input-group mb-3">
-					<span class="input-group-text">$</span>
-					<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-					<span class="input-group-text">.00</span>
-					<button class="btn btn-outline-success" type="button">Bid</button>
-				</div>
-  		</div>
-		</div>
-`
-	container.append(cardElement) //adds it to the screen 
-}
 // Adding event listener to form and handling query
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
