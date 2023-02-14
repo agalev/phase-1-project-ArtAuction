@@ -1,6 +1,6 @@
 Phase-1 Project Proposal— “Art Auctioneer”
 
-Our website offers the rare opportunity for users to purchase art from the Metropolitan Art Museum. The webpage shows pictures of different works of art from the museum, and when the "View Detials" button is clicked, information about the artist and the piece will display in a modal. 
+Our website offers the rare opportunity for users to purchase art from the Metropolitan Art Museum. The webpage shows pictures of different works of art from the museum, and when the "View Details" button is clicked, information about the artist and the piece will display in a modal. 
 
 Users can search the collection by Artist Name or Artist Piece, and if an invalid input is received, the user will see the message, “No results found. Please try again.” If a valid input is received, only the pieces of art searched for appear on the webpage. 
 
