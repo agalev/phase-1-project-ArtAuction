@@ -1,5 +1,6 @@
 // External imports
 import { card } from './components/card.js'
+import { expandedView } from './components/expandedView.js'
 // Initialize pointers to DOM elements
 const container = document.getElementById('container')
 const form = document.getElementById('form')
@@ -34,8 +35,8 @@ for (let index = 11264; index < 11276; index++) {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-    const cardData = {
-        id: data.objectID,
+			const cardData = {
+				id: data.objectID,
 				title: data.title,
 				artist: data.artistDisplayName,
 				artistBio: data.artistDisplayBio,
@@ -54,6 +55,7 @@ for (let index = 11264; index < 11276; index++) {
 				}
 			}
 			card(cardData)
+			expandedView(cardData)
 			localData.push(cardData)
 		})
 }
@@ -84,8 +86,3 @@ form.addEventListener('submit', (e) => {
 			break
 	}
 })
-
-const expandedView = (piece) => {
-	
-	// 	container.innerHTML = ''
-}
