@@ -71,7 +71,7 @@ form.addEventListener('submit', (e) => {
 				(piece) => piece.artist.toLowerCase() === input.toLowerCase()
 			)
 			if (result.length === 0)
-				container.innerHTML = '<h1>No results found. Try again?</h1>'
+				container.innerHTML = '<h1>No results found. Please try again.</h1>'
 			else result.forEach((piece) => card(piece))
 			break
 		case 'piece':
