@@ -3,13 +3,17 @@ import { expandedView } from './expandedView.js'
 
 export const card = (piece) => {
 	const card = document.createElement('article')
-	card.className = 'm-2 card'
+	card.className = 'card m-2'
 	card.style = 'width: 18rem;'
-
-
+	card.addEventListener('mouseover', () => {
+		card.className = 'card m-2 border border-warning'
+	})
+	card.addEventListener('mouseout', () => {
+		card.className = 'card m-2'
+	})
 	card.innerHTML = `
   		<img src="${piece.image}" class="card-img" alt="${piece.title}">
-			<span class="position-absolute top-0 start-50 m-2 translate-middle badge rounded-pill bg-danger">
+			<span class="fs-6 position-absolute top-0 start-50 m-2 translate-middle badge rounded-pill bg-danger">
 				Buyout: $${piece.buyout.toLocaleString('en-US')}</span>
   		<div class="card-body">
     		<h5 class="card-title">${piece.title}</h5>
@@ -21,7 +25,7 @@ export const card = (piece) => {
 				<li class="list-group-item">Completed: ${piece.date}</li>
   		</ul>
 			<span id="${piece.id
-		}" class=" fs-5 text-warning d-flex justify-content-around mb-2 mt-2">Current Bid: $${piece.currentBid.toLocaleString(
+		}" class="text-warning d-flex justify-content-around mb-2 mt-2">Current Bid: $${piece.currentBid.toLocaleString(
 			'en-US'
 		)}</span>
 			<div class="input-group mb-3 justify-content-evenly">
@@ -31,21 +35,11 @@ export const card = (piece) => {
 					<button class="btn btn-outline-success" type="button">Bid</button>
 					</div>`
 
-	const detailButton = document.createElement("button")
-	detailButton.className = "btn btn-outline-primary px-5 m-3 rounded-pill"
-	detailButton.dataset.bsToggle = "modal"
-	detailButton.dataset.bsTarget = "#modal"
-	detailButton.innerText = "View Details"
-	detailButton.addEventListener("click", () => {
-		expandedView(piece)
-	})
-	card.append(detailButton)
-
 
 	const span = document.createElement('span')
 	span.id = `span-${piece.id}`
 	span.className =
-		'position-relative top-0 start-50 translate-middle badge rounded-pill text-bg-warning'
+		'fs-6 position-relative top-0 start-50 translate-middle badge rounded-pill text-bg-warning'
 	countdown(span, piece.timeLeft)
 	card.append(span)
 	container.append(card)
