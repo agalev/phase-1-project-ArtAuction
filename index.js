@@ -79,7 +79,7 @@ form.addEventListener('submit', (e) => {
 				(piece) => piece.title.toLowerCase() === input.toLowerCase()
 			)
 			if (result === undefined)
-				container.innerHTML = '<h1>No results found. Try again?</h1>'
+				container.innerHTML = '<h1>No results found. Please try again.</h1>'
 			else card(result)
 			break
 	}
