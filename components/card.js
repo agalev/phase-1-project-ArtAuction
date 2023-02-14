@@ -5,13 +5,10 @@ export const card = (piece) => {
 	const card = document.createElement('article')
 	card.className = 'card m-2'
 	card.style = 'width: 18rem;'
-	// card.addEventListener('click', () => {
-	// 	expandedView(piece)
-	// })
-	card.addEventListener('mouseover', (e) => {
+	card.addEventListener('mouseover', () => {
 		card.className = 'card m-2 border border-warning'
 	})
-	card.addEventListener('mouseout', (e) => {
+	card.addEventListener('mouseout', () => {
 		card.className = 'card m-2'
 	})
 	card.innerHTML = `
@@ -29,7 +26,7 @@ export const card = (piece) => {
   		</ul>
 			<span id="${
 				piece.id
-			}" class="fs-5 text-warning justify-content-around">Current Bid: $${piece.currentBid.toLocaleString(
+			}" class="fs-5 text-warning d-flex justify-content-around my-2">Current Bid: $${piece.currentBid.toLocaleString(
 		'en-US'
 	)}</span>
 			<div class="input-group my-3">
@@ -37,10 +34,16 @@ export const card = (piece) => {
 					<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
 					<span class="input-group-text">.00</span>
 					<button class="btn btn-outline-success" type="button">Bid</button>
-							<button type="button" onClick="${(piece) => expandedView(piece)}" class="btn btn-outline-primary px-5 m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#modal">View Details</button>
 					</div>`
-
-
+	const detailButton = document.createElement('button')
+	detailButton.className = 'btn btn-outline-primary px-5 m-3 rounded-pill'
+	detailButton.dataset.bsToggle = 'modal'
+	detailButton.dataset.bsTarget = '#modal'
+	detailButton.innerText = 'View Details'
+	detailButton.addEventListener('click', () => {
+		expandedView(piece)
+	})
+	card.append(detailButton)
 	const span = document.createElement('span')
 	span.id = `span-${piece.id}`
 	span.className =
