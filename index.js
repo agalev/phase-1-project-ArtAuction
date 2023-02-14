@@ -55,7 +55,6 @@ for (let index = 11264; index < 11276; index++) {
 				}
 			}
 			card(cardData)
-			expandedView(cardData)
 			localData.push(cardData)
 		})
 }

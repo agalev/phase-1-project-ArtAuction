@@ -1,11 +1,7 @@
 export const expandedView = (piece) => {
+    console.log(piece)
     const modal = document.getElementById('modal')
     modal.addEventListener('show.bs.modal', event => {
-        // Button that triggered the modal
-        const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-        const recipient = button.getAttribute('data-bs-whatever')
-
         // Update the modal's content.
         const modalHeader = modal.querySelector('.modal-header')
         const modalBody = modal.querySelector('.modal-body')
@@ -16,7 +12,6 @@ export const expandedView = (piece) => {
         <img src="${piece.image}" class="card-img" alt="${piece.title}">
         <span class="position-absolute top-0 start-50 m-2 translate-middle badge rounded-pill bg-danger">
             Buyout: $${piece.buyout.toLocaleString('en-US')}</span>
-
       <ul class="list-group list-group-flush">
             <li class="list-group-item">Artist: ${piece.artist}</li>
             <li class="list-group-item">Born: ${piece.artistBio}</li>
@@ -41,7 +36,6 @@ export const expandedView = (piece) => {
 
 
         modalFooter.innerHTML = `
-      
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           `
     })
