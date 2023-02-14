@@ -1,4 +1,11 @@
 export const expandedView = (piece) => {
+    console.log(piece)
+    const modal = document.getElementById('modal')
+    modal.addEventListener('show.bs.modal', event => {
+        // Update the modal's content.
+        const modalHeader = modal.querySelector('.modal-header')
+        const modalBody = modal.querySelector('.modal-body')
+        const modalFooter = modal.querySelector('.modal-footer')
 	const modal = document.getElementById('modal')
 	// Update the modal's content.
 	const modalHeader = modal.querySelector('.modal-header')
@@ -28,14 +35,15 @@ export const expandedView = (piece) => {
       <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
       <span class="input-group-text">.00</span>
       <button class="btn btn-outline-success" type="button">Bid</button>
-    </div>
-    <span id="${
-			piece.id
-		}" class="text-warning d-flex mt-2">Current Bid: $${piece.currentBid.toLocaleString(
-		'en-US'
-	)}</span>
-    `
-	modalFooter.innerHTML = `
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    `
+      </div>
+      <span id="${piece.id
+            }" class="text-warning d-flex mt-2">Current Bid: $${piece.currentBid.toLocaleString(
+                'en-US'
+            )}</span>`
+
+
+        modalFooter.innerHTML = `
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          `
+    })
 }
