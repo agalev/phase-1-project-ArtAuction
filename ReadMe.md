@@ -8,7 +8,7 @@ There is also a form where users can insert a bidding price and “bid” on the
 
 If the input price is below the current bid price, a message will appear saying “Please bid above the current bid price.”
 
-If a user inputs a price higher than the listed Buyout Price, a pop-ip message will say, “Congratulations on your new art!” 
+If a user inputs a price higher than the listed Buyout Price, a pop-up message will say, “Congratulations on your new art!” 
 
 Once a piece is purchased, the Buyout price will be replaced with the text “SOLD”. 
 
