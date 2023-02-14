@@ -1,17 +1,9 @@
 export const expandedView = (piece) => {
-<<<<<<< HEAD
-    const modal = document.getElementById('modal')
-        // Update the modal's content.
-        const modalHeader = modal.querySelector('.modal-header')
-        const modalBody = modal.querySelector('.modal-body')
-        const modalFooter = modal.querySelector('.modal-footer')
-=======
 	const modal = document.getElementById('modal')
 	// Update the modal's content.
 	const modalHeader = modal.querySelector('.modal-header')
 	const modalBody = modal.querySelector('.modal-body')
 	const modalFooter = modal.querySelector('.modal-footer')
->>>>>>> 0b6303c9ce0fafde1eff014f2e5ec4e82e199d3e
 
 	modalHeader.innerHTML = `<h5 class="card-title">${piece.title}</h5>`
 	modalBody.innerHTML = `
@@ -36,18 +28,6 @@ export const expandedView = (piece) => {
       <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
       <span class="input-group-text">.00</span>
       <button class="btn btn-outline-success" type="button">Bid</button>
-<<<<<<< HEAD
-      </div>
-      <span id="${piece.id
-            }" class="text-warning d-flex mt-2">Current Bid: $${piece.currentBid.toLocaleString(
-                'en-US'
-            )}</span>`
-
-        modalFooter.innerHTML = `
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          `
-    }
-=======
     </div>
     <span id="${
 			piece.id
@@ -59,4 +39,3 @@ export const expandedView = (piece) => {
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
     `
 }
->>>>>>> 0b6303c9ce0fafde1eff014f2e5ec4e82e199d3e
