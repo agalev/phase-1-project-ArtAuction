@@ -36,7 +36,8 @@ for (let index = 11264; index < 11276; index++) {
 
 const card = (piece) => { 
 	const cardElement = document.createElement('article') //dont declare variables with the same name as the function
-	card.addEventListener('click', (event) => {
+	// console.log(card)
+	cardElement.addEventListener('click', (event) => {
 		event.preventDefault()
 		expandedView(piece)
 	})
