@@ -14,7 +14,7 @@ export const countdown = (element, minutes) => {
 			time = 0
 			clearInterval(interval)
 			element.textContent = `Sold to the highest bidder!`
-			element.className = `position-relative top-0 start-50 px-5 translate-middle badge rounded-pill text-bg-success`
+			element.className = `fs-6 position-relative top-0 start-50 translate-middle badge rounded-pill text-bg-success`
 		}
 	}, 1000)
 }
