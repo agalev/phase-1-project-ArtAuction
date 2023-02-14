@@ -1,16 +1,9 @@
 export const expandedView = (piece) => {
-    console.log(piece)
     const modal = document.getElementById('modal')
-    modal.addEventListener('show.bs.modal', event => {
         // Update the modal's content.
         const modalHeader = modal.querySelector('.modal-header')
         const modalBody = modal.querySelector('.modal-body')
         const modalFooter = modal.querySelector('.modal-footer')
-	const modal = document.getElementById('modal')
-	// Update the modal's content.
-	const modalHeader = modal.querySelector('.modal-header')
-	const modalBody = modal.querySelector('.modal-body')
-	const modalFooter = modal.querySelector('.modal-footer')
 
 	modalHeader.innerHTML = `<h5 class="card-title">${piece.title}</h5>`
 	modalBody.innerHTML = `
@@ -45,5 +38,4 @@ export const expandedView = (piece) => {
         modalFooter.innerHTML = `
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           `
-    })
-}
+    }
