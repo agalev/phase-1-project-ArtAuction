@@ -51,12 +51,16 @@ for (let index = 11264; index < 11276; index++) {
 				buyout: Math.floor(Math.random() * 10000000),
 				get currentBid() {
 					return Math.floor(this.buyout / 2)
+				},
+				set currentBid(newBid) {console.log(newBid)
+					this._currentBid = newBid
 				}
 			}
 			card(cardData)
 			localData.push(cardData)
 		})
 }
+
 
 // Adding event listener to form and handling query
 form.addEventListener('submit', (e) => {
