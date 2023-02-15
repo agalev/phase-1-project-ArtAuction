@@ -1,6 +1,5 @@
 // Timer Function (thanks chatGPT)
 export const countdown = (element, minutes) => {
-	let seconds = 0
 	let time = minutes * 60
 	let interval = setInterval(() => {
 		let minutes = parseInt(time / 60, 10)
@@ -14,7 +13,7 @@ export const countdown = (element, minutes) => {
 			time = 0
 			clearInterval(interval)
 			element.textContent = `Sold to the highest bidder!`
-			element.className = `fs-6 position-relative top-0 start-50 translate-middle badge rounded-pill text-bg-success`
+			element.className = `fs-6 position-relative top-0 start-50 translate-middle badge rounded-pill text-bg-success mt-1`
 		}
 	}, 1000)
 }
